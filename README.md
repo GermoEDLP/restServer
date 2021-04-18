@@ -6,6 +6,7 @@ Aplicación de backend en NodeJs con endpoints de ejemplo y preconfiguración de
 * JavaScript
 * NodeJs
 * ExpressJs
+* Cors
 * DotEnv
 
 ### Implementación y uso
