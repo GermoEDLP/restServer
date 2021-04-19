@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const { dbConection } = require("../database/config");
 
 class Server {
   constructor() {
@@ -7,10 +8,18 @@ class Server {
     this.port = process.env.PORT;
     this.usuariosRouterPath = "/api/usuarios";
 
+    //Conexión de la base de datos
+    this.conectarDB();
+
     //Middlewares
     this.middleware();
 
+    //Rutas de la aplicación
     this.routes();
+  }
+
+  async conectarDB() {
+    await dbConection();
   }
 
   middleware() {
@@ -30,7 +39,7 @@ class Server {
 
   listen() {
     this.app.listen(this.port, () => {
-      console.log(`Example app listening at http://localhost:${this.port}`);
+      console.log(`Servidor escuchando en http://localhost:${this.port}`);
     });
   }
 }
