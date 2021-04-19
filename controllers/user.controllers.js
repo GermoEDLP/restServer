@@ -3,6 +3,7 @@ const User = require("../models/user.model");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 
+
 const usuarioGet = async (req = request, res = response) => {
   // Especificación de que solo retorne aquellos usuarios con estado habilitado
   const estado = { estado: true };
